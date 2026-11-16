@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "7947e9ab-b34a-4f52-9e14-c95211233ff6",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "E:\\Personal Project\\Honmyou\\Web App\\Print Template Renderer\\.archify\\architecture-print-template-renderer-20261110-204100\\candidate.json",
+  "output": "E:\\Personal Project\\Honmyou\\Web App\\Print Template Renderer\\.archify\\architecture-print-template-renderer-20261110-204100\\print-template-renderer.html",
+  "specification": {
+    "sha256": "2eaf6fae7332f710c1f8ad61e12761db8afafa484dbf3e0e77420b6b8c0df2d0",
+    "bytes": 6747
+  },
+  "artifact": {
+    "sha256": "b3e26ab0e410defe594b630d50907c87e0b2de197c5a5b7292199fa48a0a2200",
+    "bytes": 860617
+  }
+}

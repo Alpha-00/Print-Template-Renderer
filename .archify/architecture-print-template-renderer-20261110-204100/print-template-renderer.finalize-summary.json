@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "fail",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "E:\\Personal Project\\Honmyou\\Web App\\Print Template Renderer\\.archify\\architecture-print-template-renderer-20261110-204100\\candidate.json",
+    "sha256": "2eaf6fae7332f710c1f8ad61e12761db8afafa484dbf3e0e77420b6b8c0df2d0",
+    "bytes": 6747
+  },
+  "artifact": {
+    "path": "E:\\Personal Project\\Honmyou\\Web App\\Print Template Renderer\\.archify\\architecture-print-template-renderer-20261110-204100\\print-template-renderer.html",
+    "sha256": "b3e26ab0e410defe594b630d50907c87e0b2de197c5a5b7292199fa48a0a2200",
+    "bytes": 860617
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "fail"
+  },
+  "failedStage": "browser-check",
+  "diagnostics": [
+    {
+      "code": "viewer/temp-cleanup-incomplete",
+      "severity": "error",
+      "message": "Browser cleanup could not safely finish; inspect the reported retained path.",
+      "subject": {
+        "artifact": "E:\\Personal Project\\Honmyou\\Web App\\Print Template Renderer\\.archify\\architecture-print-template-renderer-20261110-204100\\print-template-renderer.html"
+      },
+      "evidence": {
+        "reason": "Chrome did not exit; retained temporary profile \"C:\\Users\\E5-576G\\AppData\\Local\\Temp\\archify-visual-check-profile-Z690bE\".",
+        "retainedDirectory": "C:\\Users\\E5-576G\\AppData\\Local\\Temp\\archify-visual-check-profile-Z690bE"
+      },
+      "supportedFixes": [
+        "resolve the reported process or filesystem failure; verify directory ownership before manual cleanup"
+      ]
+    }
+  ],
+  "diagnosticSummary": {
+    "total": 1,
+    "shown": 1,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "E:\\Personal Project\\Honmyou\\Web App\\Print Template Renderer\\.archify\\architecture-print-template-renderer-20261110-204100\\print-template-renderer.finalize.json",
+    "summaryReceipt": "E:\\Personal Project\\Honmyou\\Web App\\Print Template Renderer\\.archify\\architecture-print-template-renderer-20261110-204100\\print-template-renderer.finalize-summary.json",
+    "browserCheckReceipt": "E:\\Personal Project\\Honmyou\\Web App\\Print Template Renderer\\.archify\\architecture-print-template-renderer-20261110-204100\\print-template-renderer.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.2.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-11-10T13:42:28.635Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 12634,
+  "browserCheck": {
+    "requested": true,
+    "ran": false
+  }
+}

@@ -1,0 +1,270 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Print Template Renderer Architecture",
+    "output": ".archify/architecture-print-template-renderer-20261110-204100/print-template-renderer.html",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    {
+      "id": "client_browser",
+      "type": "external",
+      "label": "User / Browser",
+      "sublabel": "HTTP Request + URL Params",
+      "pos": [40, 200],
+      "size": [130, 60]
+    },
+    {
+      "id": "url_parser",
+      "type": "frontend",
+      "label": "URL Parser",
+      "sublabel": "urlParser.ts",
+      "tag": "Drive & GitHub normalizer",
+      "pos": [230, 200],
+      "size": [140, 60]
+    },
+    {
+      "id": "param_panel",
+      "type": "frontend",
+      "label": "Parameter Panel",
+      "sublabel": "ParameterPanel.tsx",
+      "tag": "Live JSON & Presets",
+      "pos": [440, 70],
+      "size": [140, 60]
+    },
+    {
+      "id": "app_orchestrator",
+      "type": "frontend",
+      "label": "App Orchestrator",
+      "sublabel": "App.tsx",
+      "tag": "React 19 State",
+      "pos": [440, 200],
+      "size": [140, 60]
+    },
+    {
+      "id": "fetch_service",
+      "type": "frontend",
+      "label": "Fetch Service",
+      "sublabel": "fetchService.ts",
+      "tag": "CORS Fallback",
+      "pos": [440, 330],
+      "size": [140, 60]
+    },
+    {
+      "id": "external_sources",
+      "type": "cloud",
+      "label": "External Sources",
+      "sublabel": "Google Drive / GitHub",
+      "pos": [40, 460],
+      "size": [130, 60]
+    },
+    {
+      "id": "local_proxy",
+      "type": "backend",
+      "label": "Express Server",
+      "sublabel": "server.js :3000",
+      "tag": "/api/proxy CORS",
+      "pos": [230, 460],
+      "size": [140, 60]
+    },
+    {
+      "id": "default_templates",
+      "type": "database",
+      "label": "Default Templates",
+      "sublabel": "public/templates/*",
+      "pos": [440, 460],
+      "size": [140, 60]
+    },
+    {
+      "id": "typst_engine",
+      "type": "backend",
+      "label": "Typst WASM Engine",
+      "sublabel": "typstRenderer.ts",
+      "tag": "@myriaddreamin/typst",
+      "pos": [720, 70],
+      "size": [150, 60]
+    },
+    {
+      "id": "docx_engine",
+      "type": "backend",
+      "label": "DOCX Pipeline",
+      "sublabel": "docxRenderer.ts",
+      "tag": "docxtemplater + preview",
+      "pos": [720, 200],
+      "size": [150, 60]
+    },
+    {
+      "id": "svg_engine",
+      "type": "backend",
+      "label": "SVG Vector Engine",
+      "sublabel": "svgRenderer.ts",
+      "tag": "jspdf + svg2pdf",
+      "pos": [720, 330],
+      "size": [150, 60]
+    },
+    {
+      "id": "pdf_previewer",
+      "type": "frontend",
+      "label": "PDF Previewer",
+      "sublabel": "PDFPreviewer.tsx",
+      "tag": "pdfjs-dist multi-page",
+      "pos": [980, 200],
+      "size": [150, 60]
+    },
+    {
+      "id": "user_output",
+      "type": "external",
+      "label": "Document Output",
+      "sublabel": "Print / Download / Share",
+      "pos": [1210, 200],
+      "size": [130, 60]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Browser Client Runtime (React 19 + Vite SPA)",
+      "wraps": [
+        "url_parser",
+        "param_panel",
+        "app_orchestrator",
+        "fetch_service",
+        "typst_engine",
+        "docx_engine",
+        "svg_engine",
+        "pdf_previewer"
+      ]
+    },
+    {
+      "kind": "security-group",
+      "label": "Server & Static Storage",
+      "wraps": ["local_proxy", "default_templates"]
+    }
+  ],
+  "connections": [
+    {
+      "id": "users-to-parser",
+      "from": "client_browser",
+      "to": "url_parser",
+      "label": "GET params",
+      "variant": "emphasis"
+    },
+    {
+      "id": "parser-to-app",
+      "from": "url_parser",
+      "to": "app_orchestrator",
+      "label": "params"
+    },
+    {
+      "id": "panel-to-app",
+      "from": "param_panel",
+      "to": "app_orchestrator",
+      "label": "presets & edits",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "app-to-fetch",
+      "from": "app_orchestrator",
+      "to": "fetch_service",
+      "label": "template URL",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "fetch-to-proxy",
+      "from": "fetch_service",
+      "to": "local_proxy",
+      "label": "CORS proxy",
+      "variant": "dashed"
+    },
+    {
+      "id": "proxy-to-remote",
+      "from": "local_proxy",
+      "to": "external_sources",
+      "label": "HTTP get"
+    },
+    {
+      "id": "fetch-to-defaults",
+      "from": "fetch_service",
+      "to": "default_templates",
+      "label": "fallback"
+    },
+    {
+      "id": "app-to-typst",
+      "from": "app_orchestrator",
+      "to": "typst_engine",
+      "label": "typst + data"
+    },
+    {
+      "id": "app-to-docx",
+      "from": "app_orchestrator",
+      "to": "docx_engine",
+      "label": "docx + data"
+    },
+    {
+      "id": "app-to-svg",
+      "from": "app_orchestrator",
+      "to": "svg_engine",
+      "label": "svg + data"
+    },
+    {
+      "id": "typst-to-pdf",
+      "from": "typst_engine",
+      "to": "pdf_previewer",
+      "label": "PDF blob",
+      "variant": "emphasis"
+    },
+    {
+      "id": "docx-to-pdf",
+      "from": "docx_engine",
+      "to": "pdf_previewer",
+      "label": "PDF blob",
+      "variant": "emphasis"
+    },
+    {
+      "id": "svg-to-pdf",
+      "from": "svg_engine",
+      "to": "pdf_previewer",
+      "label": "PDF blob",
+      "variant": "emphasis"
+    },
+    {
+      "id": "pdf-to-user",
+      "from": "pdf_previewer",
+      "to": "user_output",
+      "label": "canvas & export",
+      "variant": "emphasis"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "URL-Driven Ingestion",
+      "items": [
+        "URL parameters parsed for format type, source URL, data JSON, and config JSON",
+        "Automatic URL normalization for Google Drive and GitHub raw repository links",
+        "Interactive drawer allows live JSON tuning and 1-click preset switching"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Three Rendering Pipelines",
+      "items": [
+        "Typst: Compiles native markup to PDF via WebAssembly with #auto_table() injection",
+        "DOCX: Binds data tables with docxtemplater and captures pages via html2canvas + jsPDF",
+        "SVG: Vector element replacement and dynamic SVG table generator with svg2pdf.js"
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "Preview & Delivery",
+      "items": [
+        "PDF.js multi-page rasterizer with continuous vertical scroll and grid overview",
+        "Thumbnail navigation strip, 50%-300% zoom, rotation, and fullscreen mode",
+        "Native browser print dialog and high-res vector PDF export"
+      ]
+    }
+  ]
+}

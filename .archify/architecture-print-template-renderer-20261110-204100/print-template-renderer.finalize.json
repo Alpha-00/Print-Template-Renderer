@@ -1,0 +1,376 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "fail",
+  "type": "architecture",
+  "quality": "showcase",
+  "startedAt": "2026-11-10T13:46:49.488Z",
+  "specification": {
+    "path": "E:\\Personal Project\\Honmyou\\Web App\\Print Template Renderer\\.archify\\architecture-print-template-renderer-20261110-204100\\candidate.json",
+    "sha256": "2eaf6fae7332f710c1f8ad61e12761db8afafa484dbf3e0e77420b6b8c0df2d0",
+    "bytes": 6747
+  },
+  "artifact": {
+    "path": "E:\\Personal Project\\Honmyou\\Web App\\Print Template Renderer\\.archify\\architecture-print-template-renderer-20261110-204100\\print-template-renderer.html",
+    "sha256": "b3e26ab0e410defe594b630d50907c87e0b2de197c5a5b7292199fa48a0a2200",
+    "bytes": 860617
+  },
+  "stages": {
+    "validate": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": null,
+      "execution": "embedded-in-deliver",
+      "command": [
+        "D:\\Application\\Nodejs\\node.exe",
+        "E:\\Personal Project\\Honmyou\\Web App\\Print Template Renderer\\.agents\\skills\\archify\\bin\\archify.mjs",
+        "deliver",
+        "architecture",
+        "E:\\Personal Project\\Honmyou\\Web App\\Print Template Renderer\\.archify\\architecture-print-template-renderer-20261110-204100\\candidate.json",
+        "E:\\Personal Project\\Honmyou\\Web App\\Print Template Renderer\\.archify\\architecture-print-template-renderer-20261110-204100\\print-template-renderer.html",
+        "--quality",
+        "showcase",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": true,
+        "command": "validate",
+        "specification": {
+          "sha256": "2eaf6fae7332f710c1f8ad61e12761db8afafa484dbf3e0e77420b6b8c0df2d0",
+          "bytes": 6747
+        },
+        "validation": {
+          "checksPassed": 9,
+          "checkCount": 9,
+          "compositionProfile": "showcase",
+          "compositionStatus": "pass",
+          "errors": 0,
+          "warnings": 0
+        }
+      }
+    },
+    "deliver": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 956,
+      "command": [
+        "D:\\Application\\Nodejs\\node.exe",
+        "E:\\Personal Project\\Honmyou\\Web App\\Print Template Renderer\\.agents\\skills\\archify\\bin\\archify.mjs",
+        "deliver",
+        "architecture",
+        "E:\\Personal Project\\Honmyou\\Web App\\Print Template Renderer\\.archify\\architecture-print-template-renderer-20261110-204100\\candidate.json",
+        "E:\\Personal Project\\Honmyou\\Web App\\Print Template Renderer\\.archify\\architecture-print-template-renderer-20261110-204100\\print-template-renderer.html",
+        "--quality",
+        "showcase",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "receiptId": "7947e9ab-b34a-4f52-9e14-c95211233ff6",
+        "ok": true,
+        "command": "deliver",
+        "type": "architecture",
+        "input": "E:\\Personal Project\\Honmyou\\Web App\\Print Template Renderer\\.archify\\architecture-print-template-renderer-20261110-204100\\candidate.json",
+        "output": "E:\\Personal Project\\Honmyou\\Web App\\Print Template Renderer\\.archify\\architecture-print-template-renderer-20261110-204100\\print-template-renderer.html",
+        "specification": {
+          "sha256": "2eaf6fae7332f710c1f8ad61e12761db8afafa484dbf3e0e77420b6b8c0df2d0",
+          "bytes": 6747
+        },
+        "artifact": {
+          "sha256": "b3e26ab0e410defe594b630d50907c87e0b2de197c5a5b7292199fa48a0a2200",
+          "bytes": 860617
+        },
+        "validation": {
+          "checksPassed": 9,
+          "checkCount": 9,
+          "compositionProfile": "showcase",
+          "compositionStatus": "pass",
+          "errors": 0,
+          "warnings": 0
+        },
+        "update": {
+          "status": "unavailable",
+          "installedVersion": null,
+          "availableVersion": null,
+          "releaseNotes": null,
+          "checkedAt": null,
+          "source": null,
+          "noticeRequired": false,
+          "noticeText": null,
+          "reason": "disabled"
+        }
+      }
+    },
+    "check": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 365,
+      "command": [
+        "D:\\Application\\Nodejs\\node.exe",
+        "E:\\Personal Project\\Honmyou\\Web App\\Print Template Renderer\\.agents\\skills\\archify\\bin\\archify.mjs",
+        "check",
+        "E:\\Personal Project\\Honmyou\\Web App\\Print Template Renderer\\.archify\\architecture-print-template-renderer-20261110-204100\\print-template-renderer.html",
+        "--require-provenance"
+      ],
+      "receipt": {
+        "ok": true,
+        "file": "E:\\Personal Project\\Honmyou\\Web App\\Print Template Renderer\\.archify\\architecture-print-template-renderer-20261110-204100\\print-template-renderer.html",
+        "artifact": {
+          "sha256": "b3e26ab0e410defe594b630d50907c87e0b2de197c5a5b7292199fa48a0a2200",
+          "bytes": 860617
+        },
+        "checks": [
+          {
+            "name": "single_svg",
+            "ok": true,
+            "details": [
+              "found 1 <svg> block(s)"
+            ]
+          },
+          {
+            "name": "finite_svg",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "orthogonal_arrows",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "label_route_clearance",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "relationship_crossings",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "relationship_corridors",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "container_border_runs",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "route_rhythm",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "legend_clearance",
+            "ok": true,
+            "details": []
+          }
+        ],
+        "composition": {
+          "schemaVersion": 1,
+          "profile": "showcase",
+          "status": "pass",
+          "summary": {
+            "errors": 0,
+            "warnings": 0
+          },
+          "metrics": {
+            "properCrossings": 0,
+            "resolvedCrossovers": 0,
+            "ambiguousCorridors": 0,
+            "arrowheadCollisions": 0,
+            "containerBorderRuns": 0,
+            "labelRouteClearanceIssues": 0,
+            "labelCanvasOverflowIssues": 0,
+            "minLabelRouteClearance": 14.6,
+            "desktopReadabilityIssues": 0,
+            "viewportHeightIssues": 0,
+            "minProjectedNodeTextPx": 7.5,
+            "maxBends": 2,
+            "routesOverSuggestedBends": 0,
+            "maxStretch": 1,
+            "routesOverSuggestedStretch": 0,
+            "minSegmentPx": 24,
+            "minInteriorSegmentPx": 116,
+            "shortSegmentCount": 0,
+            "shortEndpointSegmentCount": 0,
+            "shortInteriorSegmentCount": 0,
+            "microSegmentCount": 0
+          },
+          "suggestedLimits": {
+            "bendsPerRelationship": 2,
+            "stretch": 1.35,
+            "segmentPx": 16,
+            "microSegmentPx": 8
+          },
+          "routeReview": {
+            "crossings": [],
+            "detours": []
+          },
+          "leadingSpace": {
+            "measured": true,
+            "emptyTopPx": 40,
+            "emptyTopRatio": 0.066,
+            "occupiedTop": 40,
+            "viewBoxTop": 0,
+            "canvasHeight": 608,
+            "typicalNodeHeight": 60,
+            "reviewSuggested": false
+          },
+          "desktopReadability": {
+            "budgetBasis": "recognized-declared-wide",
+            "readerContract": "declared-wide-v1",
+            "availableDiagramWidth": 1293.75,
+            "actualBudgetPx": 1293.75,
+            "actualReaderWidth": 1323.75,
+            "desiredReaderWidth": 1323.75,
+            "viewportCap": 1376,
+            "limit": "source-size",
+            "requestedTargetPx": 7.5,
+            "requestedTargetMet": true,
+            "hardFloorPx": 6,
+            "hardFloorMet": true,
+            "minimumOwner": {
+              "kind": "edge",
+              "id": "users-to-parser",
+              "from": "client_browser",
+              "to": "url_parser"
+            },
+            "minimumSourceTextPx": 8,
+            "minimumProjectedTextPx": 7.5,
+            "semanticTextCount": 42
+          },
+          "issues": []
+        },
+        "provenance": "current",
+        "deliveryReceiptId": "7947e9ab-b34a-4f52-9e14-c95211233ff6"
+      }
+    },
+    "browser-check": {
+      "status": "fail",
+      "exitCode": 1,
+      "durationMs": 10479,
+      "command": [
+        "D:\\Application\\Nodejs\\node.exe",
+        "E:\\Personal Project\\Honmyou\\Web App\\Print Template Renderer\\.agents\\skills\\archify\\bin\\archify.mjs",
+        "browser-check",
+        "E:\\Personal Project\\Honmyou\\Web App\\Print Template Renderer\\.archify\\architecture-print-template-renderer-20261110-204100\\print-template-renderer.html",
+        "--json",
+        "--require-provenance"
+      ],
+      "execution": "in-process",
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": false,
+        "command": "browser-check",
+        "evidenceKind": "automated-browser",
+        "status": "fail",
+        "visualReview": "not-requested",
+        "provenance": "current",
+        "deliveryReceiptId": "7947e9ab-b34a-4f52-9e14-c95211233ff6",
+        "artifact": {
+          "path": "E:\\Personal Project\\Honmyou\\Web App\\Print Template Renderer\\.archify\\architecture-print-template-renderer-20261110-204100\\print-template-renderer.html",
+          "sha256": "b3e26ab0e410defe594b630d50907c87e0b2de197c5a5b7292199fa48a0a2200",
+          "bytes": 860617
+        },
+        "state": {
+          "detail": "read",
+          "motion": "still"
+        },
+        "chrome": {
+          "status": "available",
+          "executable": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+        },
+        "diagnostics": [
+          {
+            "code": "viewer/temp-cleanup-incomplete",
+            "severity": "error",
+            "message": "Browser cleanup could not safely finish; inspect the reported retained path.",
+            "subject": {
+              "artifact": "E:\\Personal Project\\Honmyou\\Web App\\Print Template Renderer\\.archify\\architecture-print-template-renderer-20261110-204100\\print-template-renderer.html"
+            },
+            "evidence": {
+              "reason": "Chrome did not exit; retained temporary profile \"C:\\Users\\E5-576G\\AppData\\Local\\Temp\\archify-visual-check-profile-Z690bE\".",
+              "retainedDirectory": "C:\\Users\\E5-576G\\AppData\\Local\\Temp\\archify-visual-check-profile-Z690bE"
+            },
+            "supportedFixes": [
+              "resolve the reported process or filesystem failure; verify directory ownership before manual cleanup"
+            ]
+          }
+        ],
+        "containment": {
+          "status": "fail",
+          "policy": "fit-or-reader-declared-readable-vertical-scroll",
+          "viewports": []
+        },
+        "themeStates": {
+          "status": "fail",
+          "viewports": []
+        },
+        "readability": {
+          "status": "fail",
+          "minimumProjectedNodeTextPx": 6,
+          "viewports": []
+        },
+        "viewerChrome": {
+          "status": "fail",
+          "viewports": []
+        },
+        "captures": {
+          "status": "not-requested",
+          "screenshots": [],
+          "contactSheet": null
+        },
+        "sidecars": {
+          "receipt": "print-template-renderer.browser-check.json",
+          "files": []
+        },
+        "error": "Chrome did not exit; retained temporary profile \"C:\\Users\\E5-576G\\AppData\\Local\\Temp\\archify-visual-check-profile-Z690bE\"."
+      }
+    }
+  },
+  "browserCheck": {
+    "requested": true,
+    "ran": false
+  },
+  "diagnostics": [
+    {
+      "code": "viewer/temp-cleanup-incomplete",
+      "severity": "error",
+      "message": "Browser cleanup could not safely finish; inspect the reported retained path.",
+      "subject": {
+        "artifact": "E:\\Personal Project\\Honmyou\\Web App\\Print Template Renderer\\.archify\\architecture-print-template-renderer-20261110-204100\\print-template-renderer.html"
+      },
+      "evidence": {
+        "reason": "Chrome did not exit; retained temporary profile \"C:\\Users\\E5-576G\\AppData\\Local\\Temp\\archify-visual-check-profile-Z690bE\".",
+        "retainedDirectory": "C:\\Users\\E5-576G\\AppData\\Local\\Temp\\archify-visual-check-profile-Z690bE"
+      },
+      "supportedFixes": [
+        "resolve the reported process or filesystem failure; verify directory ownership before manual cleanup"
+      ]
+    }
+  ],
+  "evidence": {
+    "receipt": "E:\\Personal Project\\Honmyou\\Web App\\Print Template Renderer\\.archify\\architecture-print-template-renderer-20261110-204100\\print-template-renderer.finalize.json",
+    "summaryReceipt": "E:\\Personal Project\\Honmyou\\Web App\\Print Template Renderer\\.archify\\architecture-print-template-renderer-20261110-204100\\print-template-renderer.finalize-summary.json",
+    "browserCheckReceipt": "E:\\Personal Project\\Honmyou\\Web App\\Print Template Renderer\\.archify\\architecture-print-template-renderer-20261110-204100\\print-template-renderer.browser-check.json"
+  },
+  "visualReview": "not-requested",
+  "failedStage": "browser-check",
+  "finishedAt": "2026-11-10T13:47:02.123Z",
+  "durationMs": 12634,
+  "update": {
+    "status": "current",
+    "installedVersion": "3.2.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-11-10T13:42:28.635Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  }
+}
